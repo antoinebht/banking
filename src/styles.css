@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #0D3B66;
+    margin: 0;
+}
+
+html {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
