@@ -24,4 +24,6 @@
 #logs-console #logs-console-content {
     padding-left: 30px;
     font-family: "Consolas, 'Courier New', monospace";
+    height: 150px;
+    overflow: scroll;
 }
