@@ -1,0 +1,14 @@
+header {
+    border-bottom: 2px solid #0D3B66;
+    padding: 0px 7px 5px 7px;
+    display: flex;
+}
+
+header > h1 {
+    text-transform: uppercase;
+}
+
+header > h1 > #header-version {
+    font-size: 0.3em;
+    font-style: italic;
+}
