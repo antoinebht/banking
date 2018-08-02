@@ -9,9 +9,15 @@ import { AppConfigService } from '../services/app-config.service';
 })
 export class HeaderComponent implements OnInit {
     
+    title: string;
+
+    version: string;
+
     constructor(private appConfigService: AppConfigService) { }
     
     ngOnInit() {
+        this.appConfigService.getTitle().subscribe(title => this.title = title);
+        this.appConfigService.getVersion().subscribe(version => this.version = version);
     }
     
 }
