@@ -1,0 +1,27 @@
+#logs-console {
+    background-color: rgb(3, 34, 75);
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    position: absolute;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+#logs-console * {
+    color: rgb(232, 236, 241);
+}
+
+#logs-console h3 {
+    padding: 5px;
+    text-transform: uppercase; 
+}
+
+#logs-console #logs-console-content.hidden {
+    display: none;
+}
+
+#logs-console #logs-console-content {
+    padding-left: 30px;
+    font-family: "Consolas, 'Courier New', monospace";
+}

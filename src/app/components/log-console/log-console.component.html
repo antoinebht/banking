@@ -1,3 +1,7 @@
 <div id="logs-console">
-  <p *ngFor='let log of this.loggingService.logs'> > {{log.date}} - {{log.from}} - {{log.content}}</p>
+    <h3 (click)="display()">Logs Console</h3>
+    <div id="logs-console-content"
+        [class.hidden]="contentHidden === true">
+        <p *ngFor='let log of this.loggingService.logs'> > {{log.date}} - {{log.from}} - {{log.content}}</p>
+    </div>
 </div>
