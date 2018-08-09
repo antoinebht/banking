@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { AccountOperation } from '../../model/account-operation';
 
 @Component({
     selector: 'app-account-operation',
@@ -7,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountOperationComponent implements OnInit {
     
+    @Input()
+    operation: AccountOperation;
+
     constructor() { }
     
     ngOnInit() {

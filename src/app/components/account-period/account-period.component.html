@@ -1,6 +1,12 @@
 <div class="account-period-header">
-  <h3>{{this.period.name}}</h3>
+    <h3>{{this.period.name}}</h3>
 </div>
-<ul>
-  <li *ngFor='let row of period.operations'>{{row.date}}</li>
-</ul>
+<app-account-operation 
+    *ngFor='let operation of period.operations;
+        let index =index;
+        let isOdd=odd;
+        let isEven=even' 
+    [operation]="operation"
+    [class.account-operation-odd]="isOdd" 
+    [class.account-operation-even]="isEven">
+</app-account-operation>
