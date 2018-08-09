@@ -1,1 +1,6 @@
-<app-account-period *ngFor='let period of this.account.periods' [period]="period"></app-account-period>
+<div class="account-periods-list">
+    <app-account-period 
+        *ngFor='let period of this.account.periods' 
+        [period]="period">
+    </app-account-period>
+</div>
