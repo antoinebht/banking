@@ -7,6 +7,7 @@ import { LogConsoleComponent } from './components/log-console/log-console.compon
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AccountComponent } from './components/account/account.component';
 import { AccountPeriodComponent } from './components/account-period/account-period.component';
+import { AccountOperationComponent } from './components/account-operation/account-operation.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AccountPeriodComponent } from './components/account-period/account-peri
     HeaderComponent,
     LogConsoleComponent,
     AccountComponent,
-    AccountPeriodComponent
+    AccountPeriodComponent,
+    AccountOperationComponent
   ],
   imports: [
     BrowserModule,
