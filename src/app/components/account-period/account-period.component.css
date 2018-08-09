@@ -13,3 +13,22 @@
     font-weight: normal;
 }
 
+.account-period-operations {
+    padding: 0px 10px;
+    border-left: 1px solid #0D3B66;
+    border-right: 1px solid #0D3B66;
+}
+
+.account-period-operations  button {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    font-size: 2em;
+}
+
+.account-period-operations  button:hover {
+    font-weight: bolder;
+    background-color: #F0F0f0;
+}

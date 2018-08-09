@@ -1,12 +1,15 @@
 <div class="account-period-header">
     <h3>{{this.period.name}}</h3>
 </div>
-<app-account-operation 
-    *ngFor='let operation of period.operations;
-        let index =index;
-        let isOdd=odd;
-        let isEven=even' 
-    [operation]="operation"
-    [class.account-operation-odd]="isOdd" 
-    [class.account-operation-even]="isEven">
-</app-account-operation>
+<div class="account-period-operations">
+    <app-account-operation 
+        *ngFor='let operation of period.operations;
+            let index =index;
+            let isOdd=odd;
+            let isEven=even' 
+        [operation]="operation"
+        [class.account-operation-odd]="isOdd" 
+        [class.account-operation-even]="isEven">
+    </app-account-operation>
+    <button (click)='this.addOperation()'>+</button>
+</div>

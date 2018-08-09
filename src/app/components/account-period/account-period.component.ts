@@ -17,4 +17,7 @@ export class AccountPeriodComponent implements OnInit {
   ngOnInit() {
   }
 
+  addOperation(): void {
+    this.period.operations.push({ date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false })
+  }
 }
