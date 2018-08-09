@@ -6,13 +6,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { LogConsoleComponent } from './components/log-console/log-console.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AccountComponent } from './components/account/account.component';
+import { AccountPeriodComponent } from './components/account-period/account-period.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LogConsoleComponent,
-    AccountComponent
+    AccountComponent,
+    AccountPeriodComponent
   ],
   imports: [
     BrowserModule,
