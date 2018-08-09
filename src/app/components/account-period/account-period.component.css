@@ -1,0 +1,14 @@
+.account-period-header {
+    background-color: #0D3B66;
+    padding: 5px 10px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.account-period-header * {
+    color: rgb(232, 236, 241);
+}
+
+.account-period-header h3 {
+    text-transform: uppercase;
+    font-weight: normal;
+}
