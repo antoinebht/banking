@@ -1,7 +1,7 @@
-<ul class="account-operation">
-    <li class="account-operation-checked">{{this.operation.checked? 'x': ''}}</li>
-    <li class="account-operation-date">{{this.operation.date}}</li>
-    <li class="account-operation-type">{{this.operation.type}}</li>
-    <li class="account-operation-amount">{{this.operation.amount}}€</li>
-    <li class="account-operation-coment">{{this.operation.coment}}</li>
-</ul>
+<div class="account-operation">
+    <input type="checkbox" [(ngModel)]="operation.checked">
+    <input type="date" [(ngModel)]="operation.date">
+    <input [(ngModel)]="operation.type">
+    <label><input type="number" [(ngModel)]="operation.amount">€</label>
+    <input [(ngModel)]="operation.coment">
+</div>
