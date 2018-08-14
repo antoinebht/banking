@@ -13,6 +13,6 @@ export class AppConfigService {
     }
 
     getVersion(): Observable<string> {
-        return of("v0.1");
+        return of("v0.2");
     }
 }
