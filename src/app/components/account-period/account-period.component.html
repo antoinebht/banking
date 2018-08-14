@@ -1,15 +1,47 @@
-<div class="account-period-header">
-    <h3>{{this.period.name}}</h3>
-</div>
-<div class="account-period-operations">
-    <app-account-operation 
+
+<!-- <div class="account-period">
+    <div class="account-period-header">
+        <h5>{{this.period.name}}</h5>
+    </div>
+    <div class="card-body">
+        <app-account-operation 
         *ngFor='let operation of period.operations;
-            let index =index;
-            let isOdd=odd;
-            let isEven=even' 
+        let index =index;
+        let isOdd=odd;
+        let isEven=even' 
         [operation]="operation"
         [class.account-operation-odd]="isOdd" 
         [class.account-operation-even]="isEven">
     </app-account-operation>
-    <button (click)='this.addOperation()'>+</button>
+</div> -->
+
+<div class="card">
+    <div class="card-header" (click)="toogleCollapse()">
+        {{this.period.name}}
+    </div>
+    <div class="card-body" [class.hidden]="collapse">
+        <div class="table-responsive">
+            <table class="table table-sm table-striped">
+                <!-- <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Handle</th>
+                    </tr>
+                </thead> -->
+                <tbody>
+                    <tr *ngFor='let operation of period.operations'>
+                        <td><input type="checkbox" [(ngModel)]="operation.checked" /></td>
+                        <td><input type="date" [(ngModel)]="operation.date" /></td>
+                        <td><input type="text" [(ngModel)]="operation.type" /></td>
+                        <td><input type="number" [(ngModel)]="operation.amount" /></td>
+                        <td><input type="text" [(ngModel)]="operation.comment" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+
+

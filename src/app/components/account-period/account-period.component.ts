@@ -12,6 +12,7 @@ export class AccountPeriodComponent implements OnInit {
   @Input()
   period: AccountPeriod;
 
+  collapse: boolean = true;
   constructor() { }
 
   ngOnInit() {
@@ -19,5 +20,8 @@ export class AccountPeriodComponent implements OnInit {
 
   addOperation(): void {
     this.period.operations.push({ date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false })
+  }
+  toogleCollapse(): void {
+    this.collapse = !this.collapse;
   }
 }
