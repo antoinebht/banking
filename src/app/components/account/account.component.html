@@ -1,28 +1,39 @@
 <div class="row">
-    <div class="account-periods-list col-8">
-        <app-account-period 
-        *ngFor='let period of this.account.periods' 
+    <div class="account-periods-list col-3">
+        <div class="card">
+            <div class="card-header">
+                <h4>{{this.account.name}}</h4>
+            </div>
+            <div class="card-body">
+                
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item">
+                        Add Period
+                    </li>
+                    <li class="nav-item">
+                        Preferences
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </li> -->
+                </ul>                
+            </div>
+        </div>
+    </div>
+    
+    <div class="account-periods-list col-9">
+        <app-account-period *ngFor='let period of this.account.periods' 
         [period]="period">
     </app-account-period>
 </div>
-
-<div class="account-periods-list col-4">
-    <div class="card">
-        <div class="card-header">
-            Stats
-        </div>
-        <div class="card-body">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe praesentium tenetur, eum quo, quam eveniet exercitationem odit aliquid ratione veritatis similique et, pariatur debitis doloremque ab totam repudiandae cum atque.
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            Stats
-        </div>
-        <div class="card-body">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe praesentium tenetur, eum quo, quam eveniet exercitationem odit aliquid ratione veritatis similique et, pariatur debitis doloremque ab totam repudiandae cum atque.
-        </div>
-    </div>
-</div>
-
 </div>
