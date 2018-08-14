@@ -5,7 +5,11 @@
                 <h4>{{this.account.name}}</h4>
             </div>
             <div class="card-body">
-                
+                <h6 [class.text-danger]='getRealAmount() < 0' [class.text-success]='getRealAmount() > 0'>Real Amount : {{getRealAmount().toFixed(2)}}</h6>
+                <h6 [class.text-danger]='getBankAmount() < 0' [class.text-success]='getBankAmount() > 0'>Bank Amount : {{getBankAmount().toFixed(2)}}</h6>
+                <h6>Saved Amount : </h6>
+
+
                 <ul class="nav nav-pills flex-column">
                     <li class="nav-item">
                         Add Period
