@@ -1,3 +1,27 @@
-<header>
-    <h1>{{this.title}}<span id="header-version">{{this.version}}</span></h1>
-</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">{{this.title}}<span class="app-version">{{this.version}}</span></a>
+    
+    <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-toggle="collapse" 
+        data-target="#navbarColor02" 
+        aria-controls="navbarColor02" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Accounts
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" *ngFor='let account of this.accounts' routerLink="/account/{{account.id}}">{{account.name}}</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

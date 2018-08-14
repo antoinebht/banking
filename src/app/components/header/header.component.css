@@ -1,14 +1,9 @@
-header {
-    border-bottom: 2px solid #0D3B66;
-    padding: 0px 7px 5px 7px;
-    display: flex;
-}
-
-header > h1 {
+.navbar-brand {
     text-transform: uppercase;
+    font-weight: bolder;
 }
 
-header > h1 > #header-version {
-    font-size: 0.3em;
+.navbar-brand .app-version {
     font-style: italic;
+    font-size: 8px;
 }
