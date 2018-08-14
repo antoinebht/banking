@@ -3,29 +3,29 @@
 }
 
 /* checkbox */
-td:nth-child(1),
-td:nth-child(1) > input {
+td:nth-child(2),
+td:nth-child(2) > input {
     width: 20px;
 }
 /* date */
-td:nth-child(2),
-td:nth-child(2) > input {
+td:nth-child(3),
+td:nth-child(3) > input {
     width: 130px;
 }
 /* type */
-td:nth-child(3),
-td:nth-child(3) > input {
+td:nth-child(4),
+td:nth-child(4) > input {
     width: 200px;
 }
 /* amount */
-td:nth-child(4),
-td:nth-child(4) > input {
+td:nth-child(5),
+td:nth-child(5) > input {
     width: 100px;
     text-align: right;
 }
 /* comment */
-td:nth-child(5),
-td:nth-child(5) > input {
+td:nth-child(6),
+td:nth-child(6) > input {
     min-width: 200px;
     width: 100%;
 }
