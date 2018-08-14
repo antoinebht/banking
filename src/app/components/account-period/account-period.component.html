@@ -16,8 +16,15 @@
 </div> -->
 
 <div class="card">
-    <div class="card-header" (click)="toogleCollapse()">
-        {{this.period.name}}
+    <div class="card-header" >
+        <h4>
+            <span (click)='toogleCollapse()'>
+                <small class="pull-right" class="fa fa-chevron-right" [class.hidden]="!collapse"></small>
+                <small class="pull-right" class="fa fa-chevron-down" [class.hidden]="collapse"></small>
+                {{this.period.name}} 
+            </span>
+            <small class="fa fa-plus" (click)='addOperation()'></small>
+        </h4>
     </div>
     <div class="card-body" [class.hidden]="collapse">
         <div class="table-responsive">
