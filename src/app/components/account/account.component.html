@@ -8,29 +8,16 @@
                 <h6 [class.text-danger]='getRealAmount() < 0' [class.text-success]='getRealAmount() > 0'>Real Amount : {{getRealAmount().toFixed(2)}}</h6>
                 <h6 [class.text-danger]='getBankAmount() < 0' [class.text-success]='getBankAmount() > 0'>Bank Amount : {{getBankAmount().toFixed(2)}}</h6>
                 <h6>Saved Amount : </h6>
-
-
-                <ul class="nav nav-pills flex-column">
-                    <li class="nav-item">
-                        Add Period
-                    </li>
-                    <li class="nav-item">
-                        Preferences
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                        <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                    </li> -->
-                </ul>                
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><small class="fa fa-plus pull-Left"></small> Add Period</li>
+                <li class="list-group-item"><small class="fa fa-cog pull-Left"></small> Preferences</li>
+            </ul>
+            <div class="card-body">
+                <h4>PERIOD</h4>
+                <h6 [class.text-danger]='getRealAmount() < 0' [class.text-success]='getRealAmount() > 0'>Real Amount : {{getRealAmount().toFixed(2)}}</h6>
+                <h6 [class.text-danger]='getBankAmount() < 0' [class.text-success]='getBankAmount() > 0'>Bank Amount : {{getBankAmount().toFixed(2)}}</h6>
+                <h6>Saved Amount : </h6>
             </div>
         </div>
     </div>
