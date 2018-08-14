@@ -6,46 +6,19 @@ export const ACCOUNTS: BankAccount[] = [
         name: 'CCHQ1',
         periods: [
             {
-                name: 'period1',
+                name: 'Jul-2018',
                 operations: [
-                    { date: '2018-06-26', amount: 26.0, type: 'INITIAL_VALUE', comment:'', checked: false },
-                    { date: '2018-06-27', amount: 6.6, type: 'EPARGNE', comment:'', checked: true },
-                    { date: '2018-06-28', amount: 6.0, type: 'LOISIR', comment:'', checked: false },
-                    { date: '2018-06-29', amount: 26.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-30', amount: -6.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false },
-                    { date: '2018-06-29', amount: 26.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-30', amount: -6.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false },
-                    { date: '2018-06-29', amount: 26.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-30', amount: -6.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false },
-                    { date: '2018-06-29', amount: 26.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-30', amount: -6.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false },
+                    { date: '2018-07-26', amount: 1449.56, tags:["initial_value"], checked: true },
+                    { date: '2018-07-26', amount: -50, tags:["epargne", "PEL"], checked: false },
+                    { date: '2018-07-26', amount: -303.7, tags:["epargne", "LIVA"], checked: false },
+                    { date: '2018-07-26', amount: -11.30, tags:["loisir", "bar"], checked: true },
+                    { date: '2018-07-26', amount: -57.78, tags:["voiture", "essence"], checked: true },
+                    { date: '2018-07-26', amount: -39.7, tags:["voiture", "assurance"], checked: true },
                 ]
             },
             {
-                name: 'period2',
+                name: 'Aug-2018',
                 operations: [
-                    { date: '2018-06-26', amount: 5467.89, type: 'INITIAL_VALUE', comment:'', checked: false },
-                    { date: '2018-06-27', amount: -346.86, type: 'EPARGNE', comment:'', checked: true },
-                    { date: '2018-06-28', amount: -45.89, type: 'LOISIR', comment:'', checked: false },
-                    { date: '2018-06-29', amount: -345.87, type: 'COURSES', comment:'', checked: false },
-                    { date: '2018-06-30', amount: -6.6, type: 'COURSES', comment:'', checked: false },
-                    { date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-29', amount: 26.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-30', amount: -6.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false },
-                    { date: '2018-06-29', amount: 26.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-30', amount: -6.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false },
-                    { date: '2018-06-29', amount: 26.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-30', amount: -6.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false },
-                    { date: '2018-06-29', amount: 26.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-30', amount: -6.6, type: 'COURSES', comment:'', checked: true },
-                    { date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false },
                 ]
             }
         ]
@@ -57,12 +30,6 @@ export const ACCOUNTS: BankAccount[] = [
             {
                 name: 'period1',
                 operations: [
-                    { date: '2018-06-26', amount: 26.0, type: 'COURSES', comment:'', checked: false },
-                    { date: '2018-06-27', amount: 6.6, type: 'EPARGNE', comment:'', checked: false },
-                    { date: '2018-06-28', amount: 6.0, type: 'LOISIR', comment:'', checked: false },
-                    { date: '2018-06-29', amount: 26.6, type: 'COURSES', comment:'', checked: false },
-                    { date: '2018-06-30', amount: -6.6, type: 'COURSES', comment:'', checked: false },
-                    { date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false },
                 ]
             }
         ]

@@ -20,12 +20,22 @@ export class AccountPeriodComponent implements OnInit {
     this.period.operations.reverse()
   }
 
+  addTag(operation: AccountOperation, value: string): void {
+    operation.tags.push(value);
+  }
+
+  removeTag(operation: AccountOperation, value: string): void {
+    const index: number = operation.tags.indexOf(value);
+    if (index !== -1) {
+      operation.tags.splice(index, 1);
+    }  
+  }
+
   addOperation(): void {
-    this.period.operations.unshift({ date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false })
+    this.period.operations.unshift({ date: '2018-06-31', amount: 0.0, tags: [], checked: false })
   }
 
   deleteOperation(operation: AccountOperation): void {
-    console.log("test");
     const index: number = this.period.operations.indexOf(operation);
     if (index !== -1) {
       this.period.operations.splice(index, 1);
