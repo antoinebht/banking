@@ -16,10 +16,11 @@ export class AccountPeriodComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.period.operations.reverse()
   }
 
   addOperation(): void {
-    this.period.operations.push({ date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false })
+    this.period.operations.unshift({ date: '2018-06-31', amount: -6.0, type: 'COURSES', comment:'', checked: false })
   }
   toogleCollapse(): void {
     this.collapse = !this.collapse;
