@@ -8,12 +8,12 @@ export const ACCOUNTS: BankAccount[] = [
             {
                 name: 'Jul-2018',
                 operations: [
-                    { date: '2018-07-26', amount: 1449.56, tags:["initial_value"], checked: true },
-                    { date: '2018-07-26', amount: -50, tags:["epargne", "PEL"], checked: false },
-                    { date: '2018-07-26', amount: -303.7, tags:["epargne", "LIVA"], checked: false },
-                    { date: '2018-07-26', amount: -11.30, tags:["loisir", "bar"], checked: true },
-                    { date: '2018-07-26', amount: -57.78, tags:["voiture", "essence"], checked: true },
-                    { date: '2018-07-26', amount: -39.7, tags:["voiture", "assurance"], checked: true },
+                    { date: '2018-07-26', amount: 1449.56, tags:["INITIAL_VALUE"], checked: true },
+                    { date: '2018-07-26', amount: -50, tags:["SAVING", "PEL"], checked: false },
+                    { date: '2018-07-26', amount: -303.7, tags:["SAVING", "LIVA"], checked: false },
+                    { date: '2018-07-26', amount: -11.30, tags:["HOBBIES", "bar"], checked: true },
+                    { date: '2018-07-26', amount: -57.78, tags:["CAR", "essence"], checked: true },
+                    { date: '2018-07-26', amount: -39.7, tags:["CAR", "assurance"], checked: true },
                 ]
             },
             {
@@ -21,7 +21,13 @@ export const ACCOUNTS: BankAccount[] = [
                 operations: [
                 ]
             }
-        ]
+        ],
+        tagColors: {
+            INITIAL_VALUE: "badge-info",
+            SAVING: "badge-success",
+            CAR: "badge-warning",
+            HOBBIES: "badge-warning"
+        }
     },
     {
         id: 2,
@@ -32,6 +38,12 @@ export const ACCOUNTS: BankAccount[] = [
                 operations: [
                 ]
             }
+        ],
+        tagColors: [
+            { tag: "", color: ""},
+            { tag: "", color: ""},
+            { tag: "", color: ""},
+            { tag: "", color: ""},
         ]
     }
 ]
