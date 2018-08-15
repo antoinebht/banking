@@ -13,11 +13,19 @@ export class AccountPeriodComponent implements OnInit {
   @Input()
   period: AccountPeriod;
 
+  @Input()
+  tagColors: Object;
+
   collapse: boolean = true;
+  
   constructor() { }
 
   ngOnInit() {
     this.period.operations.reverse()
+  }
+
+  getTagColor(tag: string): string {
+    return this.tagColors[tag] || "badge-light" ;
   }
 
   addTag(operation: AccountOperation, value: string): void {

@@ -19,7 +19,7 @@
                         <td><input type="date" [(ngModel)]="operation.date" /></td>
                         <td><input type="number" [(ngModel)]="operation.amount" [class.text-danger]="operation.amount < 0" [class.text-info]="operation.amount > 0" /></td>
                         <td>
-                            <span *ngFor='let tag of operation.tags' class="badge badge-pill badge-info">
+                            <span *ngFor='let tag of operation.tags' class="badge badge-pill" [ngClass]="getTagColor(tag)">
                                 {{tag}} <i class="fa fa-times-circle" (click)='removeTag(operation, tag)'></i>
                             </span>
                             <input type="text" #tag (keyup.enter)="addTag(operation, tag.value); tag.value=''" />

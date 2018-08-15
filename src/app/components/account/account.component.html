@@ -24,7 +24,8 @@
     
     <div class="account-periods-list col-9">
         <app-account-period *ngFor='let period of this.account.periods' 
-        [period]="period">
+        [period]="period"
+        [tagColors]="this.account.tagColors">
     </app-account-period>
 </div>
 </div>
