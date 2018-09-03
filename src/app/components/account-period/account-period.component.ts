@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { AccountPeriod } from '../../model/account-period';
 import { AccountOperation } from '../../model/account-operation';
+import { AccountService } from '../../services/account.service';
 
 @Component({
   selector: 'app-account-period',
@@ -18,7 +19,7 @@ export class AccountPeriodComponent implements OnInit {
 
   collapse: boolean = true;
   
-  constructor() { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit() {
     this.period.operations.reverse()
@@ -40,7 +41,12 @@ export class AccountPeriodComponent implements OnInit {
   }
 
   addOperation(): void {
-    this.period.operations.unshift({ date: '2018-06-31', amount: 0.0, tags: [], checked: false })
+    
+    this.accountService.addOperation(1, this.period.id, { date: new Date().toISOString().slice(0,10), amount: 0.0, tags: [], checked: false } as AccountOperation)
+    .subscribe(operation => {
+      console.log(operation)
+      this.period.operations.unshift(operation)
+    });
   }
 
   deleteOperation(operation: AccountOperation): void {
