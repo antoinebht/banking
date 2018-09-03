@@ -1,8 +1,8 @@
-<div class="row">
+<div *ngIf="account!==undefined" class="row">
     <div class="account-periods-list col-3">
         <div class="card sticky-top">
             <div class="card-header">
-                <h4>{{this.account.name}}</h4>
+                <h4 >{{this.account.name}}</h4>
             </div>
             <div class="card-body">
                 <h6 [class.text-danger]='getRealAmount() < 0' [class.text-success]='getRealAmount() > 0'>Real Amount : {{getRealAmount().toFixed(2)}}</h6>
@@ -11,21 +11,40 @@
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><small class="fa fa-plus pull-Left"></small> Add Period</li>
-                <li class="list-group-item"><small class="fa fa-cog pull-Left"></small> Preferences</li>
+                <li class="list-group-item" data-toggle="modal" data-target="#preferencesModal"><small class="fa fa-cog pull-Left"></small> Preferences</li>
             </ul>
-            <!-- <div class="card-body">
-                <h4>PERIOD</h4>
-                <h6 [class.text-danger]='getRealAmount() < 0' [class.text-success]='getRealAmount() > 0'>Real Amount : {{getRealAmount().toFixed(2)}}</h6>
-                <h6 [class.text-danger]='getBankAmount() < 0' [class.text-success]='getBankAmount() > 0'>Bank Amount : {{getBankAmount().toFixed(2)}}</h6>
-                <h6>Saved Amount : </h6>
-            </div> -->
         </div>
     </div>
     
     <div class="account-periods-list col-9">
-        <app-account-period *ngFor='let period of this.account.periods' 
-        [period]="period"
-        [tagColors]="this.account.tagColors">
-    </app-account-period>
+        <app-account-period  *ngFor='let period of this.account.periods' [period]="period"[tagColors]="this.account.tagColors">
+        </app-account-period>
+    </div>
 </div>
+
+<!-- Modal -->
+<div *ngIf="account!==undefined"  class="modal fade" id="preferencesModal" tabindex="-1" role="dialog" aria-labelledby="preferencesModalLabel" aria-hidden="true">
+    
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="preferencesModalLabel">{{this.account.name}} - Preferences</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h6> Tags Colors</h6>
+                <div class="card text-white bg-info mb-3" style="max-width: 15rem;">
+                    <div class="card-header">Info</div>
+                    <div class="card-body">
+                        <span class="badge badge-pill badge-light"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
 </div>

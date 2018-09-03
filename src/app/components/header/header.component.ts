@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppConfigService } from '../../services/app-config.service';
 import { AccountService } from '../../services/account.service';
 
-import  { BankAccount } from '../../model/bank-account';
+import  { BankAccountItem } from '../../model/bank-account';
 
 @Component({
     selector: 'app-header',
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
     
     title: string;
     version: string;
-    accounts: BankAccount[];
+    accounts: BankAccountItem[];
 
     constructor(private appConfigService: AppConfigService, private accountService: AccountService) { }
     
