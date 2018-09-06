@@ -54,7 +54,9 @@ export class AccountPeriodComponent implements OnInit {
     deleteOperation(operation: AccountOperation): void {
         const index: number = this.period.operations.indexOf(operation);
         if (index !== -1) {
-            this.period.operations.splice(index, 1);
+            this.accountService.deleteOperation(1,this.period.id,operation).subscribe(arg =>
+                this.period.operations.splice(index, 1)
+            );
         }  
     }
     

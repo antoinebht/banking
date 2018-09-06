@@ -43,6 +43,14 @@ export class AccountService {
             catchError(this.handleError('putOperation', new AccountOperation()))
         );
     }
+
+    deleteOperation(accountid: number, periodid: number, operation: AccountOperation) {
+        var url = `${this.accountsUrl}/${accountid}/periods/${periodid}/operations/${operation.id}`
+        return this.http.delete<AccountOperation>(url, httpOptions).pipe(
+            tap(x => console.log("success")),
+            catchError(this.handleError('deleteOperation', new AccountOperation()))
+        );
+    }
     
     private handleError<T> (operation = 'operation', result?: T) {
         return (error: any): Observable<T> => {
