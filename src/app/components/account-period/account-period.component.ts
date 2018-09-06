@@ -15,14 +15,17 @@ export class AccountPeriodComponent implements OnInit {
     period: AccountPeriod;
     
     @Input()
+    accountId: number;
+
+    @Input()
     tagColors: Object;
     
     collapse: boolean = true;
     
-    constructor(private accountService: AccountService) { }
+    constructor( private accountService: AccountService) { }
     
     ngOnInit() {
-        this.period.operations.reverse()
+        this.period.operations.reverse();
     }
     
     getTagColor(tag: string): string {
@@ -43,8 +46,7 @@ export class AccountPeriodComponent implements OnInit {
     }
     
     addOperation(): void {
-        
-        this.accountService.addOperation(1, this.period.id, { date: new Date().toISOString().slice(0,10), amount: 0.0, tags: [], checked: false } as AccountOperation)
+        this.accountService.addOperation(this.accountId, this.period.id, { date: new Date().toISOString().slice(0,10), amount: 0.0, tags: [], checked: false } as AccountOperation)
         .subscribe(operation => {
             console.log(operation)
             this.period.operations.unshift(operation)
@@ -54,7 +56,7 @@ export class AccountPeriodComponent implements OnInit {
     deleteOperation(operation: AccountOperation): void {
         const index: number = this.period.operations.indexOf(operation);
         if (index !== -1) {
-            this.accountService.deleteOperation(1,this.period.id,operation).subscribe(arg =>
+            this.accountService.deleteOperation(this.accountId, this.period.id,operation).subscribe(arg =>
                 this.period.operations.splice(index, 1)
             );
         }  
@@ -65,6 +67,6 @@ export class AccountPeriodComponent implements OnInit {
     }
     
     onChange(operation: AccountOperation) {
-        this.accountService.putOperation(1,this.period.id,operation).subscribe();
+        this.accountService.putOperation(this.accountId, this.period.id,operation).subscribe();
     }
 }

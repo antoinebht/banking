@@ -26,7 +26,7 @@ export class AccountService {
     }
     
     getAccount(id: number) : Observable<BankAccount> {
-        return this.http.get<BankAccount>(this.accountsUrl+'/1').pipe(
+        return this.http.get<BankAccount>(this.accountsUrl+'/'+id).pipe(
             catchError(this.handleError('getHeroes', new BankAccount()))
         );
     } 

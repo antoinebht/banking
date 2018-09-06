@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 import { AccountService } from '../../services/account.service';
 import { BankAccount } from '../../model/bank-account';
@@ -13,14 +16,15 @@ export class AccountComponent implements OnInit {
     
     account: BankAccount;
 
-    constructor(private accountService: AccountService) { 
+    constructor(private route: ActivatedRoute, private router: Router, private accountService: AccountService) { 
     }
     
     ngOnInit() {
-        this.accountService.getAccount(1).subscribe(account => {
-            this.account = account
-            console.log(account);
-        } );
+        this.route.paramMap.pipe(
+            switchMap((params: ParamMap) =>
+              this.accountService.getAccount(parseInt(params.get('id')))
+            )
+        ).subscribe(account => {this.account= account; console.log(account)});
     }
 
     getBankAmount(): number {

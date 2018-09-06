@@ -17,7 +17,7 @@
     </div>
     
     <div class="account-periods-list col-9">
-        <app-account-period  *ngFor='let period of this.account.periods' [period]="period"[tagColors]="this.account.tagColors">
+        <app-account-period  *ngFor='let period of this.account.periods' [accountId]="this.account.id" [period]="period" [tagColors]="this.account.tagColors">
         </app-account-period>
     </div>
 </div>
