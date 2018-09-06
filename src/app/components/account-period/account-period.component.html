@@ -15,9 +15,9 @@
                 <tbody>
                     <tr *ngFor='let operation of period.operations'>
                         <td><i class="fa fa-trash-alt" (click)='deleteOperation(operation)'></i></td>
-                        <td><input type="checkbox" [(ngModel)]="operation.checked" /></td>
-                        <td><input type="date" [(ngModel)]="operation.date" /></td>
-                        <td><input type="number" [(ngModel)]="operation.amount" [class.text-danger]="operation.amount < 0" [class.text-info]="operation.amount > 0" /></td>
+                        <td><input type="checkbox" [(ngModel)]="operation.checked" (input)="onChange(operation)"/></td>
+                        <td><input type="date" [(ngModel)]="operation.date" (input)="onChange(operation)"/></td>
+                        <td><input type="number" [(ngModel)]="operation.amount" [class.text-danger]="operation.amount < 0" [class.text-info]="operation.amount > 0" (keyup.enter)="onChange(operation)"/></td>
                         <td>
                             <span *ngFor='let tag of operation.tags' class="badge badge-pill" [ngClass]="getTagColor(tag)">
                                 {{tag}} <i class="fa fa-times-circle" (click)='removeTag(operation, tag)'></i>

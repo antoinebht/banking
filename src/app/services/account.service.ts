@@ -31,9 +31,17 @@ export class AccountService {
         );
     } 
     
-    addOperation(accountid: number, periodid: number, operations: AccountOperation) {
+    addOperation(accountid: number, periodid: number, operation: AccountOperation) {
         var url = `${this.accountsUrl}/${accountid}/periods/${periodid}/operations`
-        return this.http.post<AccountOperation>(url, operations, httpOptions);
+        return this.http.post<AccountOperation>(url, operation, httpOptions);
+    }
+
+    putOperation(accountid: number, periodid: number, operation: AccountOperation) {
+        var url = `${this.accountsUrl}/${accountid}/periods/${periodid}/operations/${operation.id}`
+        return this.http.put<AccountOperation>(url, operation, httpOptions).pipe(
+            tap(x => console.log("success")),
+            catchError(this.handleError('putOperation', new AccountOperation()))
+        );
     }
     
     private handleError<T> (operation = 'operation', result?: T) {
