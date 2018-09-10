@@ -33,12 +33,18 @@ export class AccountPeriodComponent implements OnInit {
     }
     
     addTag(operation: AccountOperation, value: string): void {
-        operation.tags.push(value);
+        operation.tags.push({id:-1, name: value, color:'badge-warning'});
         this.onChange(operation);
     }
     
     removeTag(operation: AccountOperation, value: string): void {
-        const index: number = operation.tags.indexOf(value);
+        var index: number = -1;
+        for (var i = 0; i < operation.tags.length; i++) {
+            var tag = operation.tags[i];
+            if (tag.name === value) {
+                index = i;
+            }
+        }
         if (index !== -1) {
             operation.tags.splice(index, 1);
             this.onChange(operation);

@@ -3,5 +3,11 @@ export class AccountOperation {
     date: string;
     amount: number;
     checked: boolean;
-    tags: string[];
+    tags: TagAccountOperation[];
+}
+
+export class TagAccountOperation {
+    id: number;
+    name: string;
+    color: string;
 }
